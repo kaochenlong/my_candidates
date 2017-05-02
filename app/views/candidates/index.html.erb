@@ -1,0 +1,24 @@
+<h1>候選人列表</h1>
+
+<%= link_to "新增候選人", new_candidate_path %>
+
+<table>
+  <thead>
+    <tr>
+      <td>候選人姓名</td>
+      <td>政黨</td>
+      <td>政見</td>
+      <td>得票數</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @candidates.each do |candidate| %>
+      <tr>
+        <td><%= candidate.name %>(年齡：<%= candidate.age %> 歲)</td>
+        <td><%= candidate.party %></td>
+        <td><%= candidate.politics %></td>
+        <td><%= candidate.votes %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
