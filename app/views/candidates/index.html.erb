@@ -20,7 +20,7 @@
         <td><%= candidate.name %>(年齡：<%= candidate.age %> 歲)</td>
         <td><%= candidate.party %></td>
         <td><%= candidate.politics %></td>
-        <td><%= candidate.vote_logs.count %></td>
+        <td><%= candidate.vote_logs.size %></td>
         <td>
           <%= link_to "編輯", edit_candidate_path(candidate) %>
           <%= link_to "刪除", candidate_path(candidate), method: "delete", data: { confirm: "確認刪除" } %>
