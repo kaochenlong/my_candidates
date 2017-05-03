@@ -37,8 +37,7 @@ class CandidatesController < ApplicationController
 
   def vote
     @candidate = Candidate.find_by(id: params[:id])
-    @candidate.increment(:votes)
-    @candidate.save
+    @candidate.vote_logs.create(ip_address: request.remote_ip) if @candidate
     redirect_to candidates_path, notice: "完成投票!"
   end
 
