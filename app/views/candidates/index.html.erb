@@ -2,7 +2,7 @@
 
 <%= link_to "新增候選人", new_candidate_path %>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <td>投票</td>
@@ -16,7 +16,7 @@
   <tbody>
     <% @candidates.each do |candidate| %>
       <tr>
-        <td><%= link_to "投給這位", vote_candidate_path(candidate), method: "post", data: { confirm: "確定投給這個人?" } %></td>
+        <td><%= link_to "投給這位", vote_candidate_path(candidate), method: "post", data: { confirm: "確認要投給這位候選人嗎?!" }, class:"btn btn-danger btn-xs" %></td>
         <td><%= candidate.name %>(年齡：<%= candidate.age %> 歲)</td>
         <td><%= candidate.party %></td>
         <td><%= candidate.politics %></td>
